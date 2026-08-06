@@ -73,7 +73,7 @@ async function getWallpaper(force = false) {
 	while (true){
 		newPhoto = await loadImage();
 		
-		if(newPhoto.location.city != null){
+		if(newPhoto.location.country != null){
 			break;
 		}
 	}
@@ -113,9 +113,7 @@ async function getWallpaper(force = false) {
 }
 
 function getDisplayCity(city) {
-	if (!city) return null;
-
-	if (city.length > 20) {
+	if (city.length > 20 || !city) {
 		const randomIndex = Math.floor(Math.random() * fallbackTitles.length);
 		return fallbackTitles[randomIndex];
 	}
