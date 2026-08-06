@@ -44,6 +44,11 @@ async function loadImage() {
 		}
 	});
 
+	if (error) {
+		console.log(error);
+		return null;
+	}
+
     return data;
 }
 
