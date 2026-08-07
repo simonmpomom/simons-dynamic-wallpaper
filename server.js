@@ -121,7 +121,9 @@ function getDisplayCity(city) {
 	return city;
 }
 
-app.use("/wallpapers", express.static("wallpapers"));
+app.use("/wallpapers", express.static("wallpapers", {
+	cacheControl: false
+}));
 
 app.get("/wallpaper", async (req, res) => {
 	const force = req.query.force === "true";
