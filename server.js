@@ -113,7 +113,11 @@ async function getWallpaper(force = false) {
 }
 
 function getDisplayCity(city) {
-	if (city.length > 20 || !city) {
+	if(!city){
+		const randomIndex = Math.floor(Math.random() * fallbackTitles.length);
+		return fallbackTitles[randomIndex];
+	}
+	if (city.length > 20) {
 		const randomIndex = Math.floor(Math.random() * fallbackTitles.length);
 		return fallbackTitles[randomIndex];
 	}
