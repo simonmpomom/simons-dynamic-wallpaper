@@ -119,7 +119,7 @@ function getDisplayCity(city) {
 		const randomIndex = Math.floor(Math.random() * fallbackTitles.length);
 		return fallbackTitles[randomIndex];
 	}
-	if (city.length > 20) {
+	if (city.length > 24) {
 		const randomIndex = Math.floor(Math.random() * fallbackTitles.length);
 		return fallbackTitles[randomIndex];
 	}
