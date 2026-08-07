@@ -4,18 +4,15 @@ import cors from "cors";
 import dotenv from "dotenv";
 import fs from "fs";
 import sharp from "sharp";
-
 import { createApi } from "unsplash-js";
-
 import { createRequire } from "module";
-
 import countries from "i18n-iso-countries";
-
-countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
 
 const require = createRequire(import.meta.url);
 
 const ColorThief = require("colorthief");
+
+countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
 
 dotenv.config();
 
