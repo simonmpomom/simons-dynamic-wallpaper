@@ -38,7 +38,7 @@ async function loadImage() {
 	const { data, error } = await api.GET('/photos/random', {
 		params: {
 			query: {
-				collection: ["10466882"],
+				query: "landscape",
 				orientation: 'landscape',
 			}
 		}
