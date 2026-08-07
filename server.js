@@ -95,6 +95,8 @@ async function getWallpaper(force = false) {
 	//save new stuff to new data
 	const newData = {
 		date: today,
+		
+		version: Date.now(),
 
 		photo: newPhoto,
 
