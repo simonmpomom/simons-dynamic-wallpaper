@@ -8,6 +8,11 @@ import sharp from "sharp";
 import { createApi } from "unsplash-js";
 
 import { createRequire } from "module";
+
+import countries from "i18n-iso-countries";
+
+countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
+
 const require = createRequire(import.meta.url);
 
 const ColorThief = require("colorthief");
@@ -91,6 +96,10 @@ async function getWallpaper(force = false) {
 
 	//check if city isn't too long
 	newPhoto.location.city = getDisplayCity(newPhoto.location.city);
+
+	const countryCode = countries.getAlpha2Code(newPhoto.location.country, "en");
+	const englishCountry = countries.getName(countryCode, "en");
+	newPhoto.location.country = englishCountry;
 
 	//save new stuff to new data
 	const newData = {
